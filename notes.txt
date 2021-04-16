@@ -1,0 +1,4 @@
+A open access for still photos can be found here:
+https://www.ghibli.jp/works/
+
+While the site is in Japanese, the URLs for the photographs are english.  My plan is to create an object that contains a list of all the movies with the correspoding url slug in the image webpages.
