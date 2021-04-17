@@ -5,8 +5,10 @@ const imgBaseUrl = "https://www.ghibli.jp/gallery"
 
 //Declare and initialize an array of objects that contains information about the images.
 //While the images are not available via the API, they are available via a free personal use license from Studio Ghibli. 
-//The id will be checked against the id in the Studio Ghibli API to assign the photo to its movie.
-//'imgSlug' == The slug that will be concatenated with the base url.  The 'title' property is just to make the data more human-readable.
+//The 
+//'imgSlug' == The slug that will be concatenated with the base url.  
+//'title' is just to make the data more human-readable while debugging
+//'id' will be checked against the id in the Studio Ghibli API to assign the photo to its movie.
 const imgEquiv = [
     {imgSlug: "laputa", title: "Castle in the Sky", id: "2baf70d1-42bb-4437-b551-e5fed5a87abe"},
     {imgSlug: "nausicaa", title: "Grave of the Fireflies", id: "12cfb892-aac0-4c5b-94af-521852e46d6a"},
@@ -29,16 +31,14 @@ const imgEquiv = [
     {imgSlug: "kaguyahime", title: "The Tale of the Princess Kaguya", id: "578ae244-7750-4d9f-867b-f3cd3d6fecf4"},
     {imgSlug: "marnie", title: "When Marnie Was There", id: "5fdfb320-2a02-49a7-94ff-5ca418cae602"},
     {imgSlug: "redturtle", title: "The Red Turtle", id: "d868e6ec-c44a-405b-8fa6-f7f0f8cfb500"}
-
 ]
-// console.log(imgEquiv);
 
+//Initialize DOM Element searches
 const cardContainer = document.getElementById('card-container')
 const cardRow = document.getElementById('card-row')
 const button = document.getElementById('random-image')
-console.log(button);
 
-//create random number string function
+//Create random number between 1 and 5, and add the correct amount of leading zeros, so that it can be concanted with the base image url to access a random image
 function genRandomNum(){
     let randomNum = Math.floor(Math.random() * 50) + 1 //generates a random number between 1 and 50
     let randomNumString = randomNum.toString()
@@ -50,8 +50,7 @@ function genRandomNum(){
     return randomNumString;
 }
 
-
-//generate a random image for each film
+//On button click generate a random image for each film, and update the DOM element
 button.addEventListener("click",() => {
     console.log(filmsSummary);
     console.log(cardList);
@@ -59,22 +58,14 @@ button.addEventListener("click",() => {
         let imageLookup = imgEquiv.find(element => element.id == c.attributes[2].nodeValue);
         let imageURL = `'${imgBaseUrl}/${imageLookup.imgSlug}${genRandomNum()}.jpg'`;
         c.setAttribute("style", "background-image: url("+ imageURL +")") ;
-        
-        //console.log(c.style.backgroundImage);
-        
     });
 });
 
-
-// //Apply fading to the cards //Not working
-//     cardContainer.classList.add("fade-start") //Set the card container to 0 opacity
-//     window.addEventListener("DOMContentLoaded", () => {
-//         window.setTimeout(function() {
-//             cardContainer.classList.replace("fade-start", "fade-end")
-//         }, 100)
-//     })
-
-function getFilmList() {
+//On Load, generate the cards and populate them with API and image information
+//execute the function
+getFilmList(); 
+//define the function
+function getFilmList() { 
     fetch(baseURL)
         .then(res => res.json())
         .then(json => {
@@ -105,7 +96,6 @@ function getFilmList() {
             cardCol.className = "col-sm g-4"
             cardRow.appendChild(cardCol)
             
-            // let sampleImage = "https://www.ghibli.jp/gallery/ponyo001.jpg";
             //Create a Bootstrap card
             let card = document.createElement('div');
             card.className = "card card-standard";
@@ -132,11 +122,10 @@ function getFilmList() {
         //Set a global reference cardList for assigning the overlays
         .then( () => {
             cardList = document.querySelectorAll('.card-standard');
-            // console.log(cardList);
         })
 
         .then( () => {
-            console.log(cardList);
+            //console.log(cardList);
             //Create Overlay Cards
             cardList.forEach(card => {
                 
@@ -147,21 +136,13 @@ function getFilmList() {
 
                 //Get Data from 'filmsSummary' array
                 let filmInfo = filmsSummary.find(element => element.id == card.attributes[2].nodeValue)
-                // console.log(filmInfo);
 
-                //Create a container for the text
-  
                 //Create Overlay Card Text Container Element
                 let overlayTextContainer = document.createElement('div');
                 overlayTextContainer.className = "col-md p-4 overlayTextContainer overflow-auto";
                 overlayTextContainer.innerText = filmInfo.description ;
                 overlayCard.appendChild(overlayTextContainer);
             });
-            
-              //store a list of the cards
         });
-
-
         }
 
-getFilmList(); 
