@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body{
+    font-family: Montserrat, Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .top-bar{
     background-color: white;
     z-index: 10;
@@ -12,7 +18,7 @@
     left:78vw;
     border:none;
     min-height: 50px;
-    background-image: url(./assets/swirly2.svg);
+    background-image: url(./assets/swirly3.svg);
     background-size: cover;
     background-color: transparent;
     width: 7vw;
