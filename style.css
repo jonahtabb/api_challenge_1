@@ -1,3 +1,97 @@
+.top-bar{
+    background-color: white;
+    z-index: 10;
+    width: 100vw;
+}
+
+#random-image{
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    text-align: center;
+    left:78vw;
+    border:none;
+    min-height: 50px;
+    background-image: url(./assets/swirly2.svg);
+    background-size: cover;
+    background-color: transparent;
+    width: 7vw;
+    min-width: 60px;
+    max-width: 150px;
+    height: 7vw;
+    min-height: 60px;
+    max-height: 150px;
+    color: white;
+    transition: transform 5s;
+}
+
+#random-image:hover{
+    transform: scale(1.5);
+    transform: rotate(-360deg);
+}
+
+#random-image:active{
+    transform: scale(.9);
+    transform: rotate(360deg);
+    
+}
+
+
+
 .card-standard{
-    height: 10rem;
+    height: 15rem;
+    min-width: 400px;
+    text-align: center;
+    background-size: cover;
+    flex-direction: row;
+    transition-property: transform;
+    transition-duration: 500ms;
+    border: none;
+}
+
+.card-overlay{
+    height: 100%;
+    min-width: 400px;
+    background-color: rgba(0, 0, 0, 0.609);
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 500ms;
+    color: white;
+    
+}
+
+.overlayTextContainer{
+    max-height: 82.3%
+}
+
+.card-overlay:hover{
+    opacity: 1;
+}
+
+.card-standard:hover, :focus{
+    transform: scale(1.1, 1.1);
+    z-index: 4;
+}       
+
+.card-title{
+    height: 2rem;
+    align-self: flex-end;
+    background-color: rgba(0, 0, 0, 0.609);
+    color: white;
+    z-index: 5;
+}
+
+
+
+.fade-start{
+    opacity: 0;
+
+}
+
+.fade-end{
+    opacity: 1;
+    transition-duration: .7s;
+    transition-property: opacity;
 }
