@@ -69,11 +69,16 @@ function getFilmList() {
     fetch(baseURL)
         .then(res => res.json())
         .then(json => {
-             console.log(json);
+             //console.log(json); 
             filmsSummary = json.map (film => {
                 return { title: film.title, description: film.description, id: film.id, imageURL:"", release_date: film.release_date };
             })
+            //Sort the array by release date
+            filmsSummary.sort(function (a,b){
+                return  b.release_date - a.release_date;
+            });
             return filmsSummary;
+            
         })
 
         //Add image url to the 'filmsSummary' array

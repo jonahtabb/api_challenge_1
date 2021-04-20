@@ -10,11 +10,25 @@
 </head>
 <body>
     <div class="sticky-top top-bar">
-        <div class="col d-flex mx-5 align-items-center">
-            <img src="./assets/studio-ghibli-logo.svg" width= auto height= 80px alt="Studio Ghibli Logo">
-            <h1 class="mx-5">API PROJECT</h1>
-            <p>Jonah Tabb</p>
-            <button id = "random-image"></button>
+        <div class="container p-2">
+                <div class="row">
+                    <div class="col-md align-items-center">
+                        <img class="mx-auto d-block align-self-center" src="./assets/studio-ghibli-logo.svg" width= auto height= 80px alt="Studio Ghibli Logo">
+                    </div>
+                    <div class="col-md">
+                        <div class="row">
+                            <div class="conainter">
+                                <h1 class="text-center">API PROJECT</h1>
+                                <p class="text-center"> Thank you to the <a href ="https://ghibliapi.herokuapp.com/">Studio Ghibli API</a> and to the free <a href ="https://www.ghibli.jp/works/red-turtle/">Studio Ghibli Image Resource</a><br><a href = "https://github.com/jonahtabb/api_challenge_1"> View the source code</a> for this project by Jonah Tabb.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <p class="text-center" id="button-instructions">Click to generate random images <br> from each film</p>
+                        <button class="mx-auto d-block" id = "random-image">
+                    </button></div>
+                </div>
         </div>
     </div>
     
