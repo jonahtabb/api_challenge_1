@@ -1,3 +1,4 @@
+//Declare and initialize the base url for API Information
 const baseURL = "https://ghibliapi.herokuapp.com/films"
 
 //Declare and initialize the base url for retrieving the images
@@ -5,9 +6,9 @@ const imgBaseUrl = "https://www.ghibli.jp/gallery"
 
 //Declare and initialize an array of objects that contains information about the images.
 //While the images are not available via the API, they are available via a free personal use license from Studio Ghibli. 
-//The 
-//'imgSlug' == The slug that will be concatenated with the base url.  
-//'title' is just to make the data more human-readable while debugging
+//The url naming scheme makes it possible to dynamic populate dom elements with images, utilizing the array I created below.  
+//'imgSlug' will be concatenated with the base url.  
+//'title' makes the data more human-readable while debugging
 //'id' will be checked against the id in the Studio Ghibli API to assign the photo to its movie.
 const imgEquiv = [
     {imgSlug: "laputa", title: "Castle in the Sky", id: "2baf70d1-42bb-4437-b551-e5fed5a87abe"},
@@ -62,8 +63,9 @@ button.addEventListener("click",() => {
 });
 
 //On Load, generate the cards and populate them with API and image information
-//execute the function
+//execute the function that is defined below
 getFilmList(); 
+
 //define the function
 function getFilmList() { 
     fetch(baseURL)

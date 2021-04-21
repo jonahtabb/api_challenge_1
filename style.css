@@ -5,7 +5,7 @@ body{
 }
 
 h1{
-    font-size: 35px
+    font-size: 1rem;
 }
 
 p{
@@ -15,13 +15,13 @@ p{
 .top-bar{
     background-color: rgb(255, 255, 255);
     z-index: 10;
-    width: 100vw;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.116);
 }
 
 #button-instructions{
     font-size: 11px;
     font-weight: 800;
+    color: #074faf;
 }
 
 #random-image{
@@ -34,16 +34,16 @@ p{
     background-color: transparent;
     width: 7vw;
     min-width: 60px;
-    max-width: 150px;
+    max-width: 90px;
     height: 7vw;
     min-height: 60px;
-    max-height: 150px;
+    max-height: 90px;
     color: white;
     transition: transform 5s;
 }
 
 #random-image:hover{
-    transform: scale(1.5);
+    transform: scale(2);
     transform: rotate(-360deg);
 }
 

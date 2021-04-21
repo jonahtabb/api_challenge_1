@@ -10,29 +10,31 @@
 </head>
 <body>
     <div class="sticky-top top-bar">
-        <div class="container p-2">
+        <div class="container pt-3">
                 <div class="row">
                     <div class="col-md align-items-center">
-                        <img class="mx-auto d-block align-self-center" src="./assets/studio-ghibli-logo.svg" width= auto height= 80px alt="Studio Ghibli Logo">
+                        <img class="mx-auto d-block align-self-center" src="./assets/studio-ghibli-logo.svg" width= auto height= 60px alt="Studio Ghibli Logo">
+                        <h1 class="text-center">API PROJECT</h1>
                     </div>
                     <div class="col-md">
                         <div class="row">
-                            <div class="container p-3">
-                                <h1 class="text-center">API PROJECT</h1>
+                            <div class="container">
                                 <p class="text-center"> Thank you to the <a href ="https://ghibliapi.herokuapp.com/">Studio Ghibli API</a> and to the free <a href ="https://www.ghibli.jp/works/red-turtle/">Studio Ghibli Image Resource</a><br><a href = "https://github.com/jonahtabb/api_challenge_1"> View the source code</a> for this project by Jonah Tabb.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md">
-                        <p class="text-center" id="button-instructions">Click to generate random images <br> from each film</p>
-                        <button class="mx-auto d-block" id = "random-image">
-                    </button></div>
+                    <div class="col-md px-4">
+                        <div class="container text-center">
+                                <button id = "random-image"></button>
+                                <p id="button-instructions">Click to generate random images from each film <br> 
+                        </div>
+                    </div>
                 </div>
         </div>
     </div>
     
-    <div id="card-container" class="container">
+    <div id="card-container" class="container mb-5">
         <div id="card-row" class="row">
             <!-- Javascript will dynamically generate the cards in here -->
         </div>
