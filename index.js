@@ -38,6 +38,7 @@ const imgEquiv = [
 const cardContainer = document.getElementById('card-container')
 const cardRow = document.getElementById('card-row')
 const button = document.getElementById('random-image')
+let cardList = [];
 
 //Create random number between 1 and 5, and add the correct amount of leading zeros, so that it can be concanted with the base image url to access a random image
 function genRandomNum(){
