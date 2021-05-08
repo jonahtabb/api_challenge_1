@@ -57,9 +57,11 @@ button.addEventListener("click",() => {
     console.log(filmsSummary);
     console.log(cardList);
     cardList.forEach(c => {
+        if (c["id"] != "about-card"){
         let imageLookup = imgEquiv.find(element => element.id == c.attributes[2].nodeValue);
         let imageURL = `'${imgBaseUrl}/${imageLookup.imgSlug}${genRandomNum()}.jpg'`;
         c.setAttribute("style", "background-image: url("+ imageURL +")") ;
+        }
     });
 });
 
@@ -101,7 +103,7 @@ function getFilmList() {
             filmsSummary.forEach(film => {
             //Create a Bootstrap column container for the new card, and insert it into the static parent div
             let cardCol = document.createElement('div')
-            cardCol.className = "col-sm g-4"
+            cardCol.className = "col-12 col-md-6 col-xl-4 g-4"
             cardRow.appendChild(cardCol)
             
             //Create a Bootstrap card
@@ -121,7 +123,7 @@ function getFilmList() {
             card.appendChild(titleContainer);
 
             //Create Title
-            let filmTitle = document.createElement('h4');
+            let filmTitle = document.createElement('h2');
             filmTitle.innerText = film.title;
             titleContainer.appendChild(filmTitle);
             })
@@ -136,7 +138,7 @@ function getFilmList() {
             //console.log(cardList);
             //Create Overlay Cards
             cardList.forEach(card => {
-                
+                if (card["id"] != "about-card"){
                 //Create Overlay Card Container Element
                 let overlayCard = document.createElement('div');
                 overlayCard.className = "card card-overlay";
@@ -150,6 +152,7 @@ function getFilmList() {
                 overlayTextContainer.className = "col-md p-4 overlayTextContainer overflow-auto";
                 overlayTextContainer.innerText = filmInfo.description ;
                 overlayCard.appendChild(overlayTextContainer);
+                }
             });
         });
         }

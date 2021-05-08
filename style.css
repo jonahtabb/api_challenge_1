@@ -8,20 +8,56 @@ h1{
     font-size: 1rem;
 }
 
+h2{
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
 p{
     font-size: 12px;
 }
- 
-.top-bar{
-    background-color: rgb(255, 255, 255);
-    z-index: 10;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.116);
+a{
+    color: whitesmoke;
+}
+a:hover{
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+#about-card{
+    background-image: url("assets/studio-ghibli-logo.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+}
+
+#about-card-overlay{
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+#random-image-container{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    left:10px;
+    z-index: 99;
+}
+
+.instructions-container{
+    background-color: rgba(255, 255, 255, 0.781);
+    padding: 8px;
+    border-radius: 10px;
 }
 
 #button-instructions{
+    display: block;
     font-size: 11px;
     font-weight: 800;
     color: #074faf;
+    margin: auto;
 }
 
 #random-image{
@@ -54,7 +90,7 @@ p{
 }
 .card-standard{
     height: 15rem;
-    min-width: 400px;
+    /* min-width: 400px; */
     text-align: center;
     background-size: cover;
     flex-direction: row;
@@ -65,7 +101,6 @@ p{
 
 .card-overlay{
     height: 100%;
-    min-width: 400px;
     background-color: rgba(0, 0, 0, 0.609);
     position: absolute;
     width: 100%;
@@ -85,7 +120,7 @@ p{
 }
 
 .card-standard:hover, :focus{
-    transform: scale(1.1, 1.1);
+    transform: scale(1.05, 1.05);
     z-index: 4;
 }       
 
